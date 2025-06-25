@@ -33,7 +33,10 @@ public class browserDriver {
         file = new File("report.html");
 //        file = new File(fname);
         options = new ChromeOptions();
+        
+        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/resources/drivers/chromedriver.exe");
 
+                System.setProperty("webdriver.http.factory", "jdk-http-client");
         Map<String, Object> prefs = new HashMap<>();
         prefs.put("credentials_enable_service", false);
         prefs.put("profile.password_manager_enabled", false);
@@ -41,15 +44,14 @@ public class browserDriver {
         options.setExperimentalOption("prefs", prefs);
 
 
-        options.addArguments("user-data-dir=C:/temp/freshProfile"); // create a new empty folder manually first
+       // options.addArguments("user-data-dir=C:/temp/freshProfile"); // create a new empty folder manually first
 
-
-        driver = new ChromeDriver();
+options.addArguments("--start-maximized");
+        driver = new ChromeDriver(options);
         driver.get("https://www.saucedemo.com/");
-        driver.manage().window().maximize();
+       // driver.manage().window().maximize();
 
-        System.setProperty("webdriver.http.factory", "jdk-http-client");
-        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/resources/drivers/chromedriver.exe");
+
 
     }
 
