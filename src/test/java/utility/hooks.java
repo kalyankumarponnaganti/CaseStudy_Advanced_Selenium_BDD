@@ -27,7 +27,7 @@ public class hooks {
 //        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss");
 //        String formattedNow = now.format(formatter);
 //        String fname = "report"+formattedNow+".html";
-        Desktop.getDesktop().browse(new File("report.html").toURI());
+       // Desktop.getDesktop().browse(new File("report.html").toURI());
 //        Desktop.getDesktop().browse(new File(fname).toURI());
         driver.close();
     }
