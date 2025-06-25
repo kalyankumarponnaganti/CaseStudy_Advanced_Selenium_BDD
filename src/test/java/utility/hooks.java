@@ -30,6 +30,8 @@ public class hooks {
        // Desktop.getDesktop().browse(new File("report.html").toURI());
 //        Desktop.getDesktop().browse(new File(fname).toURI());
         driver.close();
+ System.out.println("Test completed. Report is available at: " + new File("report.html").getAbsolutePath());
+        
     }
 
 }
